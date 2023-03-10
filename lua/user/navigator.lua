@@ -3,4 +3,4 @@ if not status_ok then
   return
 end
 
-nav.setup { lsp_installer = true }
+nav.setup()

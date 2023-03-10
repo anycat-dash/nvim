@@ -25,7 +25,7 @@ keymap("n", "k", "j", opts)
 keymap("n", "i", "k", opts)
 keymap("v", "j", "h", opts)
 keymap("v", "k", "j", opts)
-keymap("v", "i", "k", opts)
+-- keymap("v", "i", "k", opts)
 keymap("n", "a", "i", opts)
 
 keymap("n", "<C-j>", "<C-w>h", opts)
