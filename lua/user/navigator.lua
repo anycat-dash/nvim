@@ -3,4 +3,8 @@ if not status_ok then
   return
 end
 
-nav.setup()
+nav.setup({
+  lsp = {
+    servers = { "terraformls" }
+  }
+})
