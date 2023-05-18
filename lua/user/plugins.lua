@@ -128,6 +128,25 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"      -- git operations inside vim
   use "lewis6991/gitsigns.nvim" -- highlight additions/deletions/changes in the file
   use "ruifm/gitlinker.nvim"    -- open links on GitHub
+  -- use "github/copilot.vim"      -- github copilot
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+      })
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
