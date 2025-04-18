@@ -32,7 +32,7 @@ bufferline.setup {
     --   end
     -- end,
     max_name_length = 30,
-    max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+    max_prefix_length = 30,   -- prefix used when a buffer is de-duplicated
     tab_size = 21,
     diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
@@ -46,7 +46,7 @@ bufferline.setup {
     --     return true
     --   end
     --   -- filter out by buffer name
-   --   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+    --   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
     --     return true
     --   end
     --   -- filter out based on arbitrary rules
@@ -73,7 +73,7 @@ bufferline.setup {
   },
   highlights = {
     fill = {
-      fg = { attribute = "fg", highlight = "#ff0000" },
+      fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
     background = {

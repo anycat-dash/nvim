@@ -5,6 +5,8 @@ end
 
 nav.setup({
   lsp = {
-    servers = { "terraformls" }
+    format_on_save = false,
+    servers = { "terraformls" },
+    disable_lsp = {'jdtls'}
   }
 })

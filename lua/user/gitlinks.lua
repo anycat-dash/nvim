@@ -14,7 +14,7 @@ gitlinker.setup({
     print_url = true,
   },
   callbacks = {
-    ["git.blendlabs.com"] = gitlinker.hosts.get_github_type_url,
+    ["git.blendlabs.com"] = gitlinker.hosts.get_gitea_type_url,
   },
   -- default mapping to call url generation with action_callback
   mappings = "mm"

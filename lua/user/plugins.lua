@@ -116,6 +116,8 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"                -- Fuzzy Search for Files, Text, Keybinding, Code Actions etc.
   use "nvim-telescope/telescope-dap.nvim"            -- Telescope extension for nvim-dap
   use "nvim-telescope/telescope-live-grep-args.nvim" -- Telescope extension for better fuzzy search
+  -- Search and Replace
+  use "nvim-pack/nvim-spectre"
 
   -- Treesitter
   use {
@@ -127,27 +129,31 @@ return packer.startup(function(use)
   -- Git
   use "tpope/vim-fugitive"      -- git operations inside vim
   use "lewis6991/gitsigns.nvim" -- highlight additions/deletions/changes in the file
-  use "ruifm/gitlinker.nvim"    -- open links on GitHub
+  -- use "ruifm/gitlinker.nvim"    -- open links on GitHub
+  use "almo7aya/openingh.nvim"  -- open links on GitHub
   -- use "github/copilot.vim"      -- github copilot
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     config = function()
       require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
+        suggestion = { enabled = true },
+        panel = { enabled = true },
       })
     end,
   }
   use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
-    config = function ()
+    config = function()
       require("copilot_cmp").setup()
     end
   }
-
+  use {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    after = { "copilot.lua" },
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
