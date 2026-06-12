@@ -2,6 +2,8 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     { "folke/neodev.nvim",    opts = {} },
     { "RRethy/vim-illuminate" },
@@ -51,10 +53,6 @@ return {
       lsp_keymaps(bufnr)
       lsp_highlight_document(client)
 
-      -- attach cmp source whenever copilot attaches
-      -- fixes lazy-loading issues with the copilot cmp source
-      local copilot_cmp = require("copilot_cmp")
-      copilot_cmp._on_insert_enter({})
 
       -- format on save
       if client.server_capabilities.documentFormattingProvider then

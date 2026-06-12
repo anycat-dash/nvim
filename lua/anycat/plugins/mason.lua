@@ -1,18 +1,19 @@
 return {
   {
     "williamboman/mason.nvim",
+    opts = {},
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = {
-        -- typescript
-        "typescript-language-server", "js-debug-adapter",
-        -- golang
-        "gopls", "delve", "gomodifytags", "goimports", "gofumpt",
-        -- terraform
-        "terraform-ls", "tflint",
-        -- lua
-        "lua-language-server"
+        "ts_ls",
+        "gopls",
+        "terraformls",
+        "lua_ls",
+        "pyright",
       },
     },
   },
-  { "williamboman/mason-lspconfig.nvim", config = function() end },
 }

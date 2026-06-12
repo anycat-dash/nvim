@@ -11,10 +11,6 @@ return {
       -- install jsregexp (optional!).
       build = "make install_jsregexp",
     },
-    {
-      "zbirenbaum/copilot-cmp",
-      opts = {},
-    },
     -- {
     -- "garymjr/nvim-snippets",
     --   opts = {
@@ -153,13 +149,12 @@ return {
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
             path = "[Path]",
-            copilot = "[Copilot]",
+
           })[entry.source.name]
           return vim_item
         end,
       },
       sources = {
-        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
